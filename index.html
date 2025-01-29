@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi App</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="millionstyl.css">
 </head>
 <body>
-    <h1>Bienvenido a mi aplicación web</h1>
-    <p>¡Esta es mi aplicación!</p>
-    <script src="app.js"></script>
+    <div class="container">
+        <header>
+            <h1>Bienvenidos a sistemas de solucion Roa</h1>
+            <p>¿Crees que puedes ser millonario?</p>
+        </header>
+        <section class="content">
+            <input type="text" id="userAnswer" placeholder="Escribe 'Sí' para continuar">
+            <button onclick="checkAnswer()">Enviar</button>
+        </section>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("userAnswer").value.toLowerCase();
+            if (answer === "sí" || answer === "si") {
+                window.location.href = "bienvenida.html"; // Redirige a la página de bienvenida
+            } else {
+                alert("Lo siento, no has respondido afirmativamente.");
+            }
+        }
+    </script>
 </body>
 </html>
